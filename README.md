@@ -5,7 +5,7 @@ Impersonation is an issue in all forms of social media profiles. Because Nostr i
 
 This scheme is highly theoretical and would likely require [improvements on protocol level](https://github.com/nostr-protocol/nips) as no central key server exists. One idea would be to add signatures to metadata, but only key owners are able to update their own metadata. Meaning: when a user's public key is signed they must receive the signature directly through the signee and add the signature manually to their pubkey's metadata for the signature to be called via `REQ, kinds:(0)`. 
 
-Ideally signatures would be updated directly via their own event type, s.a. `REQ, kinds:(69), '#p' : [public_key]`. 
+Ideally signatures would be updated directly via their own event type, s.a. `REQ, kinds:(69), '#p' : [public_key]`. This idea could also work as an add on to NIP05 by including signatures in nostr.json files. 
 
 ## Motivation
 
@@ -21,7 +21,7 @@ Scenario 01: uxerik sends me his public key via telegram chat and I send him min
 
 Scenario 02: I know NVK's legitimate public key because he posted it on his Twitter profile and I know that the Twitter profile I obtained the key from is the legitimate NVK. NVK then signs Jack's public key. Because I trust that NVK would only sign a public key he's personally verified my trust in Jack's public key belonging to the legitimate Jack goes up, and so on and so forth. 
 
-Checking the legitimacy of pub keys via trusted channels should be done via NIP05 as well and therefore adds no overhead to the verification process. However, it can alleviate the necessity of verifying via other communication channels through the web of trust aspect. If the calling of signatures is enabled on protocol level signatures can be displayed in the front end, such as so:
+Checking the legitimacy of pub keys via trusted channels should be done via NIP05 as well and therefore adds no overhead to the verification process. However, it can alleviate the necessity of verifying via other communication channels through the web of trust aspect. If the calling of signatures is enabled on protocol level/as NIP05 add on signatures can be displayed in the front end, such as so:
 
 
 <img width="726" alt="Screenshot 2022-12-23" src="https://user-images.githubusercontent.com/54821950/209402694-edafc1b0-6cbb-4a1d-91f0-e20dca77042d.png">
@@ -46,7 +46,7 @@ The script returns a signature which (for now) needs to be shared with the perso
 
 ## Verifying Signatures
 
-Signatures can be verified manually via `node signKey verify <signature> <signed public key>`. If support is added on protocol level signatures can be displayed in the front end for manual verification but could also be verified by clients directly. 
+Signatures can be verified manually via `node signKey verify <signature> <signed public key>`. If support is added on protocol level/as NIP05 add on signatures can be displayed in the front end for manual verification but could also be verified by clients directly. 
 
 
 <img width="683" alt="Screenshot 2022-12-23 at 21 53 07" src="https://user-images.githubusercontent.com/54821950/209404838-7a1ffc22-8822-49ac-8b69-9493f42d1469.png">
