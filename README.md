@@ -54,7 +54,7 @@ Signatures can be verified manually via `node signKey verify <signature> <signed
 
 ## Notes
 
-There's probably a lot better ways to add public key signing schemes to Nostr if desired. Nobody working on this idea is a cryptographer so please take this proposal with a grain of salt. Contributions are very welcome. 
+There's probably a lot better ways to add public key signing schemes to Nostr if desired. Nobody working on this idea is a cryptographer so please take this proposal with a grain of salt, there's probably a lot of things wrong with it. Contributions are very welcome. 
 
 Muchos Gracias to froggo the frog for doing all the hard work.
 
