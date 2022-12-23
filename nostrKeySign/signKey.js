@@ -1,11 +1,6 @@
 const crypto = require("crypto");
 const {verify, sign, getPublicKey} = require("@noble/secp256k1");
 
-const PRIVKEY = "81cbdb9c82bcb6067ca96ca0e754bb3d3efd1b813281010e392256c642de1064"
-const PUBKEY = "8a5a685420091ae0abef79be1735921b6bab047cc5b2aaefb8f8902dedf117f5"
-
-const PUBKEY_TO_SIGN = "d209e16fadb854d893e286f7b880ddd43e3b8dea44611dad4e0c24d6329f26cf";
-
 const command = process.argv[2];
 
 if( !command || process.argv.length !== 5 ) {
