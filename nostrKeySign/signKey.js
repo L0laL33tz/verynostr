@@ -11,7 +11,7 @@ const command = process.argv[2];
 if( !command || process.argv.length !== 5 ) {
   console.log("node signKey sign <private key> <public key to sign>");
   console.log("         or");
-  console.log("node signKey sign <signature> <signed public key>");
+  console.log("node signKey verify <signature> <signed public key>");
   process.exit(1);
 }
 
@@ -32,7 +32,7 @@ if( !command || process.argv.length !== 5 ) {
 
   } else if( command === 'verify' ) {
     if (process.argv.length !== 5) {
-      console.log("node signKey sign <signature> <signed public key>");
+      console.log("node signKey verify <signature> <signed public key>");
       process.exit(1);
     }
     const signatureSignerPubkeyStr = process.argv[3];
