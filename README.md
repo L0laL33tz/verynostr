@@ -35,6 +35,8 @@ Download & unzip nostrKeySign from this repository
 
 Navigate into the repository, likely via `cd Downloads/nostrKeySign`
 
+Run `nvm install 18`
+
 Run `npm ci` 
 
 Run `node signKey.js`
